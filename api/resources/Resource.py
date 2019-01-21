@@ -59,7 +59,7 @@ class Resource:
         if not response:
             if 'POST' in self.method_type:
                 response = self.request.app().resolve(getattr(self, 'create'))
-            elif 'GET' in self.method_type and '@' in self.route_url:
+            elif 'GET' in self.method_type and '@id' in self.route_url:
                 response = self.request.app().resolve(getattr(self, 'show'))
             elif 'GET' in self.method_type:
                 response = self.request.app().resolve(getattr(self, 'index'))
